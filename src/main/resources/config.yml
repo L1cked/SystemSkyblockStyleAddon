@@ -1,0 +1,99 @@
+# SystemSkyblockStyleAddon configuration
+# This file contains perk mechanics so they are not exposed in MayorSystem.
+
+debug_logging: false
+
+perks:
+  prospector_week:
+    sssa:
+      type: BLOCK_DROP_BONUS
+      enabled: true
+      chance: 0.08
+      blocks: [STONE, DEEPSLATE, NETHERRACK]
+      extra_drops:
+        - material: RAW_IRON
+          min: 1
+          max: 1
+        - material: COAL
+          min: 1
+          max: 2
+      worlds: ["world", "world_nether"]
+      fortune_scales: false
+
+  smelters_decree:
+    sssa:
+      type: AUTO_SMELT
+      enabled: true
+      chance: 1.0
+      blocks: [IRON_ORE, DEEPSLATE_IRON_ORE, GOLD_ORE, DEEPSLATE_GOLD_ORE]
+      mapping:
+        IRON_ORE: IRON_INGOT
+        DEEPSLATE_IRON_ORE: IRON_INGOT
+        GOLD_ORE: GOLD_INGOT
+        DEEPSLATE_GOLD_ORE: GOLD_INGOT
+
+  harvest_yield:
+    sssa:
+      type: CROP_BONUS
+      enabled: true
+      chance: 0.15
+      crops: [WHEAT, CARROTS, POTATOES, BEETROOTS]
+      extra_amount_min: 1
+      extra_amount_max: 1
+
+  replant_blessing:
+    sssa:
+      type: AUTO_REPLANT
+      enabled: true
+      crops: [WHEAT, CARROTS, POTATOES, BEETROOTS]
+      require_seed: true
+
+  mob_bounty_program:
+    sssa:
+      type: MOB_DROP_BONUS
+      enabled: true
+      chance: 0.20
+      entities: [ZOMBIE, SKELETON, CREEPER, SPIDER]
+      extra_drops:
+        - material: BONE
+          min: 1
+          max: 2
+        - material: GUNPOWDER
+          min: 1
+          max: 1
+      ignore_spawner_mobs: true
+
+  xp_dividend:
+    sssa:
+      type: EXP_MULTIPLIER
+      enabled: true
+      multiplier: 1.25
+      sources: [BLOCKS, MOBS]
+
+  fishers_market:
+    sssa:
+      type: FISHING_BONUS
+      enabled: true
+      chance: 0.25
+      extra_loot:
+        - material: COD
+          min: 1
+          max: 2
+        - material: SALMON
+          min: 1
+          max: 1
+
+  builders_amnesty:
+    sssa:
+      type: FALL_PROTECT
+      enabled: true
+      damage_multiplier: 0.60
+      cooldown_seconds: 10
+      min_fall_damage_to_trigger: 4.0
+
+  anvil_tax_cut:
+    sssa:
+      type: ANVIL_DISCOUNT
+      enabled: true
+      multiplier: 0.70
+      min_cost: 1

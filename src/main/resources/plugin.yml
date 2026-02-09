@@ -1,0 +1,15 @@
+name: SystemSkyblockStyleAddon
+version: ${version}
+main: systemSkyblockStyleAddon.SystemSkyblockStyleAddonPlugin
+api-version: '1.21'
+depend:
+  - MayorSystem
+commands:
+  sssa:
+    description: System perk style addon admin command
+    permission: sssa.admin
+    usage: /sssa <reload|debug>
+permissions:
+  sssa.admin:
+    description: Manage SystemSkyblockStyleAddon
+    default: op
