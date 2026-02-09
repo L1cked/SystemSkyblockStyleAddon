@@ -11,9 +11,9 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 ![Java Badge](https://img.shields.io/badge/java-21-orange)
 <!-- TODO: Replace badges with your preferred set and links -->
 
-> **Proprietary / All Rights Reserved**
-> No license is granted to use, copy, modify, distribute, or create derivative works from this code.
-> For permissions, contact the copyright holder.
+> **Limited Use License (Paid or Authorized Only)**
+> You may run the compiled plugin only if you have paid for it or received explicit authorization.
+> No rights are granted to use or modify the source code or distribute the plugin binary.
 
 ---
 
@@ -118,11 +118,12 @@ The shaded jar is produced by the Shadow plugin.
 ## License & Copyright
 Copyright (c) 2026 Lou Morel (Canada). All rights reserved.
 
-This repository is proprietary. No license, express or implied, is granted to any person or entity.
-You may not use, copy, modify, merge, publish, distribute, sublicense, sell, or create derivative works
-from any part of this repository without explicit prior written permission from the copyright holder.
+This repository is proprietary. Permission is granted to use the compiled
+SystemSkyblockStyleAddon plugin solely by installing and running it on Minecraft
+servers, but only if you have paid for it or received explicit authorization
+from the copyright holder.
 
-Public visibility (including viewing or forking on a code hosting platform) does not grant permission
-to use, modify, or distribute this code for any purpose.
+No other rights are granted. You may not use the source code, and you may not
+distribute the plugin binary or any modified version.
 
-No patent, trademark, or other intellectual property rights are granted by this notice.
+See `LICENSE` for the full terms.
