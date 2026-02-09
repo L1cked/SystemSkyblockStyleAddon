@@ -26,15 +26,6 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 
 ---
 
-## Screenshots
-![Perk Config](docs/images/perk-config.png)
-
-![Debug Output](docs/images/debug-output.png)
-
-![Drop Bonus](docs/images/drop-bonus.png)
-
----
-
 ## Requirements
 - Paper 1.21.8 (API 1.21)
 - Java 21
