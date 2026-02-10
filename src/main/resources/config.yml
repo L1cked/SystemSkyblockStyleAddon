@@ -5,6 +5,12 @@ debug_logging: false
 
 perks:
   prospector_week:
+    meta:
+      enabled: true
+      display_name: "<gold>Prospector Week</gold>"
+      icon: "IRON_PICKAXE"
+      lore:
+        - "<gray>Chance for extra ore while mining.</gray>"
     sssa:
       type: BLOCK_DROP_BONUS
       enabled: true
@@ -21,6 +27,12 @@ perks:
       fortune_scales: false
 
   smelters_decree:
+    meta:
+      enabled: true
+      display_name: "<gold>Smelter's Decree</gold>"
+      icon: "BLAST_FURNACE"
+      lore:
+        - "<gray>Ores drop as ingots.</gray>"
     sssa:
       type: AUTO_SMELT
       enabled: true
@@ -33,6 +45,12 @@ perks:
         DEEPSLATE_GOLD_ORE: GOLD_INGOT
 
   harvest_yield:
+    meta:
+      enabled: true
+      display_name: "<green>Harvest Yield</green>"
+      icon: "WHEAT"
+      lore:
+        - "<gray>Bonus crops from fully grown harvests.</gray>"
     sssa:
       type: CROP_BONUS
       enabled: true
@@ -42,6 +60,12 @@ perks:
       extra_amount_max: 1
 
   replant_blessing:
+    meta:
+      enabled: true
+      display_name: "<aqua>Replant Blessing</aqua>"
+      icon: "WOODEN_HOE"
+      lore:
+        - "<gray>Automatically replants fully grown crops.</gray>"
     sssa:
       type: AUTO_REPLANT
       enabled: true
@@ -49,6 +73,12 @@ perks:
       require_seed: true
 
   mob_bounty_program:
+    meta:
+      enabled: true
+      display_name: "<red>Mob Bounty Program</red>"
+      icon: "BONE"
+      lore:
+        - "<gray>Extra drops from common mobs.</gray>"
     sssa:
       type: MOB_DROP_BONUS
       enabled: true
@@ -64,6 +94,12 @@ perks:
       ignore_spawner_mobs: true
 
   xp_dividend:
+    meta:
+      enabled: true
+      display_name: "<yellow>XP Dividend</yellow>"
+      icon: "EXPERIENCE_BOTTLE"
+      lore:
+        - "<gray>More XP from blocks and mobs.</gray>"
     sssa:
       type: EXP_MULTIPLIER
       enabled: true
@@ -71,6 +107,12 @@ perks:
       sources: [BLOCKS, MOBS]
 
   fishers_market:
+    meta:
+      enabled: true
+      display_name: "<aqua>Fisher's Market</aqua>"
+      icon: "COD"
+      lore:
+        - "<gray>Bonus fish while fishing.</gray>"
     sssa:
       type: FISHING_BONUS
       enabled: true
@@ -84,6 +126,12 @@ perks:
           max: 1
 
   builders_amnesty:
+    meta:
+      enabled: true
+      display_name: "<gray>Builder's Amnesty</gray>"
+      icon: "FEATHER"
+      lore:
+        - "<gray>Reduces fall damage on cooldown.</gray>"
     sssa:
       type: FALL_PROTECT
       enabled: true
@@ -92,6 +140,12 @@ perks:
       min_fall_damage_to_trigger: 4.0
 
   anvil_tax_cut:
+    meta:
+      enabled: true
+      display_name: "<gold>Anvil Tax Cut</gold>"
+      icon: "ANVIL"
+      lore:
+        - "<gray>Lower anvil repair costs.</gray>"
     sssa:
       type: ANVIL_DISCOUNT
       enabled: true

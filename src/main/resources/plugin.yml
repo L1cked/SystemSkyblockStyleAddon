@@ -4,6 +4,10 @@ main: systemSkyblockStyleAddon.SystemSkyblockStyleAddonPlugin
 api-version: '1.21'
 depend:
   - MayorSystem
+
+libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib:2.3.0
+
 commands:
   sssa:
     description: System perk style addon admin command

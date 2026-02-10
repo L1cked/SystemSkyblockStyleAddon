@@ -57,10 +57,7 @@ tasks.processResources {
 }
 
 tasks.withType<ShadowJar>().configureEach {
-    archiveClassifier.set("")
+    // Keep the shadow jar for local testing, but don't overwrite the thin jar.
+    archiveClassifier.set("shadow")
     duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
-}
-
-tasks.build {
-    dependsOn(tasks.shadowJar)
 }

@@ -27,15 +27,13 @@ class SystemSkyblockStyleAddonPlugin : JavaPlugin() {
             logger.severe("[SSSA] Command 'sssa' missing from plugin.yml.")
         }
 
-        if (!tryInitApi()) {
-            logger.severe("[SSSA] MayorSystem API not found. Will retry shortly...")
-            retryTaskId = server.scheduler.runTaskLater(this, Runnable {
-                if (!tryInitApi()) {
-                    logger.severe("[SSSA] MayorSystem API still not found. Make sure MayorSystem is updated and enabled.")
-                    server.pluginManager.disablePlugin(this)
-                }
-            }, 20L).taskId
-        }
+        // Delay API init once; avoids noisy failure on first tick when MayorSystem is still booting.
+        retryTaskId = server.scheduler.runTaskLater(this, Runnable {
+            if (!tryInitApi()) {
+                logger.severe("[SSSA] MayorSystem API not found. Make sure MayorSystem is updated and enabled.")
+                server.pluginManager.disablePlugin(this)
+            }
+        }, 20L).taskId
 
         // logSelfCheck is invoked on successful API init
     }

@@ -11,6 +11,8 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 ![Java Badge](https://img.shields.io/badge/java-21-orange)
 <!-- TODO: Replace badges with your preferred set and links -->
 
+**Version:** 1.0.0
+
 > **Limited Use License (Paid or Authorized Only)**
 > You may run the compiled plugin only if you have paid for it or received explicit authorization.
 > No rights are granted to use or modify the source code or distribute the plugin binary.
@@ -19,10 +21,33 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 
 ## At a Glance
 - Adds Skyblock-style perk mechanics to a normal survival server
-- Reads active perk ids from MayorSystem (no duplicate perk definitions)
-- Config-driven mechanics that are not exposed in MayorSystem
+- Reads active perk ids from MayorSystem
+- Perk display data is synced into MayorSystem config on startup for menus
+- Config-driven mechanics stay in this addon and are not exposed in MayorSystem
 - Lightweight, event-driven listeners with cooldowns and caps
 - Simple admin commands for reload and debug
+
+---
+
+## How It Works (30-second overview)
+- MayorSystem owns the perk catalog and term schedule.
+- SystemSkyblockStyleAddon listens for perk changes and maintains a live set of active perk ids.
+- For each active perk, the addon loads its `sssa` mechanic definition from its own config and arms listeners.
+- When perks are cleared or the term ends, mechanics disarm instantly.
+- On startup, MayorSystem imports perk display metadata from this addon into its own config for menus.
+
+---
+
+## Included Perks
+- `prospector_week` (block drop bonus)
+- `smelters_decree` (auto smelt)
+- `harvest_yield` (crop bonus)
+- `replant_blessing` (auto replant)
+- `mob_bounty_program` (mob drop bonus)
+- `xp_dividend` (exp multiplier)
+- `fishers_market` (fishing bonus)
+- `builders_amnesty` (fall protection)
+- `anvil_tax_cut` (anvil discount)
 
 ---
 
@@ -37,29 +62,9 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 1. Drop `MayorSystem` and `SystemSkyblockStyleAddon` jars into `plugins/`.
 2. Start the server once to generate configs.
 3. Open `plugins/SystemSkyblockStyleAddon/config.yml` and adjust mechanic values if desired.
-4. Configure perk display/lore in `plugins/MayorSystem/config.yml` under `perks.sections.skyblock_style`.
+4. On first start, MayorSystem imports perk display data into `plugins/MayorSystem/config.yml` under `perks.sections.skyblock_style`.
+   You can edit it there afterward, or delete the section to re-sync from the addon.
 5. Elect a mayor and select perks. Mechanics activate immediately.
-
----
-
-## How It Works (30-second overview)
-- MayorSystem owns the perk catalog and term schedule.
-- SystemSkyblockStyleAddon listens for perk changes and maintains a live set of active perk ids.
-- For each active perk, the addon loads its `sssa` mechanic definition from its own config and arms listeners.
-- When perks are cleared or the term ends, mechanics disarm instantly.
-
----
-
-## Included Perks
-- `prospector_week` (block drop bonus)
-- `smelters_decree` (auto smelt)
-- `harvest_yield` (crop bonus)
-- `replant_blessing` (auto replant)
-- `mob_bounty_program` (mob drop bonus)
-- `xp_dividend` (exp multiplier)
-- `fishers_market` (fishing bonus)
-- `builders_amnesty` (fall protection)
-- `anvil_tax_cut` (anvil discount)
 
 ---
 
@@ -109,9 +114,15 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 
 ## Build (for developers)
 ```
-./gradlew build
+./gradlew clean jar
 ```
-The shaded jar is produced by the Shadow plugin.
+This produces the thin upload jar in `build/libs/` (no shaded dependencies).
+Runtime dependencies are downloaded by Paper/Spigot from `plugin.yml -> libraries` at server startup.
+
+Optional local fat jar (not for upload):
+```
+./gradlew shadowJar
+```
 
 ---
 
