@@ -1,7 +1,7 @@
 # SystemSkyblockStyleAddon
 
-SystemSkyblockStyleAddon is a Paper 1.21.8 addon for MayorSystem that applies Skyblock-style perk mechanics when those perks are active.
-It consumes the MayorSystem API and listens for perk change events so effects update immediately.
+SystemSkyblockStyleAddon is a [Paper](https://papermc.io/) 1.21.8 addon for [MayorSystem](https://github.com/L1cked/MayorSystem) that applies Skyblock-style perk mechanics when those perks are active.
+It consumes the [MayorSystem](https://github.com/L1cked/MayorSystem) API and listens for perk change events so effects update immediately.
 
 ![SystemSkyblockStyleAddon Banner](docs/images/banner.png)
 <!-- TODO: Replace with your banner image (recommended size: 1280x320) -->
@@ -21,20 +21,20 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 
 ## At a Glance
 - Adds Skyblock-style perk mechanics to a normal survival server
-- Reads active perk ids from MayorSystem
-- Perk display data is synced into MayorSystem config on startup for menus
-- Config-driven mechanics stay in this addon and are not exposed in MayorSystem
+- Reads active perk ids from [MayorSystem](https://github.com/L1cked/MayorSystem)
+- Perk display data is synced into [MayorSystem](https://github.com/L1cked/MayorSystem) config on startup for menus
+- Config-driven mechanics stay in this addon and are not exposed in [MayorSystem](https://github.com/L1cked/MayorSystem)
 - Lightweight, event-driven listeners with cooldowns and caps
 - Simple admin commands for reload and debug
 
 ---
 
 ## How It Works (30-second overview)
-- MayorSystem owns the perk catalog and term schedule.
+- [MayorSystem](https://github.com/L1cked/MayorSystem) owns the perk catalog and term schedule.
 - SystemSkyblockStyleAddon listens for perk changes and maintains a live set of active perk ids.
 - For each active perk, the addon loads its `sssa` mechanic definition from its own config and arms listeners.
 - When perks are cleared or the term ends, mechanics disarm instantly.
-- On startup, MayorSystem imports perk display metadata from this addon into its own config for menus.
+- On startup, [MayorSystem](https://github.com/L1cked/MayorSystem) imports perk display metadata from this addon into its own config for menus.
 
 ---
 
@@ -52,17 +52,17 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 ---
 
 ## Requirements
-- Paper 1.21.8 (API 1.21)
-- Java 21
-- MayorSystem (required)
+- [Paper](https://papermc.io/) 1.21.8 (API 1.21)
+- [Java 21](https://adoptium.net/temurin/releases/?version=21)
+- [MayorSystem](https://github.com/L1cked/MayorSystem) (required)
 
 ---
 
 ## Quick Start
-1. Drop `MayorSystem` and `SystemSkyblockStyleAddon` jars into `plugins/`.
+1. Drop [MayorSystem](https://github.com/L1cked/MayorSystem) and `SystemSkyblockStyleAddon` jars into `plugins/`.
 2. Start the server once to generate configs.
 3. Open `plugins/SystemSkyblockStyleAddon/config.yml` and adjust mechanic values if desired.
-4. On first start, MayorSystem imports perk display data into `plugins/MayorSystem/config.yml` under `perks.sections.skyblock_style`.
+4. On first start, [MayorSystem](https://github.com/L1cked/MayorSystem) imports perk display data into `plugins/MayorSystem/config.yml` under `perks.sections.skyblock_style`.
    You can edit it there afterward, or delete the section to re-sync from the addon.
 5. Elect a mayor and select perks. Mechanics activate immediately.
 
@@ -98,15 +98,15 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 ## Dependencies & Integrations
 
 ### Required
-- MayorSystem
-- Paper 1.21.8 (API 1.21)
-- Java 21
+- [MayorSystem](https://github.com/L1cked/MayorSystem)
+- [Paper](https://papermc.io/) 1.21.8 (API 1.21)
+- [Java 21](https://adoptium.net/temurin/releases/?version=21)
 
 ---
 
 ## Manual Test Plan
 1. Start server with both plugins.
-2. Force-elect a mayor and apply perks via MayorSystem admin tools.
+2. Force-elect a mayor and apply perks via [MayorSystem](https://github.com/L1cked/MayorSystem) admin tools.
 3. Verify the addon logs perk changes and mechanics trigger in-game.
 4. Clear or advance the term and verify perks disarm.
 
@@ -117,7 +117,7 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 ./gradlew clean jar
 ```
 This produces the thin upload jar in `build/libs/` (no shaded dependencies).
-Runtime dependencies are downloaded by Paper/Spigot from `plugin.yml -> libraries` at server startup.
+Runtime dependencies are downloaded by [Paper](https://papermc.io/)/[Spigot](https://www.spigotmc.org/) from `plugin.yml -> libraries` at server startup.
 
 Optional local fat jar (not for upload):
 ```
