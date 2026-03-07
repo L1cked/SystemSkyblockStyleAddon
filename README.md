@@ -13,9 +13,9 @@ It consumes the MayorSystem API and listens for perk change events so effects up
 
 **Version:** 1.0.0
 
-> **Limited Use License (Paid or Authorized Only)**
-> You may run the compiled plugin only if you have paid for it or received explicit authorization.
-> No rights are granted to use or modify the source code or distribute the plugin binary.
+> **MIT License**
+> This project is licensed under the MIT License.
+> See `LICENSE` for full terms.
 
 ---
 
@@ -126,15 +126,9 @@ Optional local fat jar (not for upload):
 
 ---
 
-## License & Copyright
-Copyright (c) 2026 Lou Morel (Canada). All rights reserved.
+## License
+This project is licensed under the MIT License.
 
-This repository is proprietary. Permission is granted to use the compiled
-SystemSkyblockStyleAddon plugin solely by installing and running it on Minecraft
-servers, but only if you have paid for it or received explicit authorization
-from the copyright holder.
+Copyright (c) 2026 Lou Morel (Canada)
 
-No other rights are granted. You may not use the source code, and you may not
-distribute the plugin binary or any modified version.
-
-See `LICENSE` for the full terms.
+See `LICENSE` for the full text.
