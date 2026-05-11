@@ -14,7 +14,7 @@ class AddonState(private val plugin: SystemSkyblockStyleAddonPlugin) {
     val fallCooldowns: MutableMap<UUID, Long> = mutableMapOf()
 
     fun syncWithApi(api: MayorApiFacade) {
-        setActivePerks(api.activePerkIdsOrEmpty())
+        setActivePerks(api.activePerkIds())
     }
 
     fun setActivePerks(perkIds: Set<String>) {

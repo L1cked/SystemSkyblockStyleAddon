@@ -9,13 +9,12 @@ plugins {
 }
 
 group = "systemSkyblockStyleAddon"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
     mavenLocal()
-    flatDir { dirs("libs") }
 }
 
 java {
@@ -40,11 +39,7 @@ tasks.withType<KotlinCompile>().configureEach {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
-    compileOnly(fileTree("../MayorSystem/build/libs") { include("MayorSystem-*.jar") })
-    val mayorSystemJar = file("libs/MayorSystem.jar")
-    if (mayorSystemJar.exists()) {
-        compileOnly(files(mayorSystemJar))
-    }
+    compileOnly(fileTree("../MayorSystem/build/libs") { include("MayorSystem-*-api.jar") })
 
     implementation(kotlin("stdlib"))
 }

@@ -29,6 +29,7 @@ class AddonCommand(
                     return true
                 }
                 plugin.reloadConfig()
+                plugin.refreshMayorPerkSourceAfterConfigReload()
                 state.syncWithApi(plugin.api)
                 sender.sendMessage("SystemSkyblockStyleAddon reloaded. Active perks: ${state.activePerkIds.size}")
                 return true
@@ -39,7 +40,7 @@ class AddonCommand(
                     sender.sendMessage("MayorSystem API not ready. Is MayorSystem updated and enabled?")
                     return true
                 }
-                val term = plugin.api.currentTermOrNull()
+                val term = plugin.api.currentTermIndex()
                 val perks = state.activePerkIds
                 val summaries = state.mechanics.summaries
                 sender.sendMessage("Current term: ${term ?: "none"}")
